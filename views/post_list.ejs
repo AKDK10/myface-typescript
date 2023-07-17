@@ -6,28 +6,26 @@
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
-            <img src = <%= post.imageUrl %> width =200 >
+            <img src = <%= post.imageUrl %> alt = "an image"  width =200 >
+                       
+            <h2><%= post.message %> </h2> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
             <p> 
-                Author's name: <%= post.postedBy.name %>
+                <h3>Author's name: <%= post.postedBy.name %></h3>
+                <p>
+                    Likes: <%=post.likedBy.length %>
+                </p>
+                <p>
+                    Dislikes: <% post.dislikedBy.forEach(function(dislike) {%> 
+                        
+                            <%= dislike.username%>
+                        
+                        <% })  %>
+                </p>
+                
             </p>
             
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-            <p> 
-               Likes: <% post.likedBy.forEach(function(like) {%> 
-                <li>
-                    <%= like.username%>
-                </li>
-                <% });  %>
-            </p>
-            <p> 
-                Dislikes: <% post.dislikedBy.forEach(function(dislike) {%> 
-                 <li>
-                     <%= dislike.username%>
-                 </li>
-                 <% });  %>
-             </p>
-
-             
+          
+            
             
         </li>
     <% }); %>

@@ -19,10 +19,27 @@
                 </li>
                 <% });  %>
             </p>
+            <p> 
+                Dislikes: <% post.dislikedBy.forEach(function(dislike) {%> 
+                 <li>
+                     <%= dislike.username%>
+                 </li>
+                 <% });  %>
+             </p>
+
+             
             
         </li>
     <% }); %>
 </ol>
+
+<%if (postList.next) { %>
+    <a href="<%= postList.next %>">Next</a>
+<% } %>
+<%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
+<% } %>
+
 </body>
 <%- include('_footer') -%>
 </html>

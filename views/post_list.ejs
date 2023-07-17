@@ -6,7 +6,20 @@
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
+            <img src = <%= post.imageUrl %> width =200 >
+            <p> 
+                Author's name: <%= post.postedBy.name %>
+            </p>
+            
             <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+            <p> 
+               Likes: <% post.likedBy.forEach(function(like) {%> 
+                <li>
+                    <%= like.username%>
+                </li>
+                <% });  %>
+            </p>
+            
         </li>
     <% }); %>
 </ol>

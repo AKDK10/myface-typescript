@@ -14,13 +14,16 @@
                 <p>
                     Likes: <%=post.likedBy.length %>
                 </p>
-                <p>
-                    Dislikes: <% post.dislikedBy.forEach(function(dislike) {%> 
+                <form method="post" action="/users/create">
+                    
+                    <button type="submit">👍 </button><%=post.likedBy.length %>
+                </form>
+                <form method="post" action="/users/create">
+                    
+                    <button type="submit">👎 </button><%= post.dislikedBy.length %>
+                </form>                    
                         
-                            <%= dislike.username%>
-                        
-                        <% })  %>
-                </p>
+                
                 
             </p>
             

@@ -1,7 +1,25 @@
 /* Add your styles here. */
+
+/* #25A38 background
+    #151820 darker background
+    #DCDCDC default foreground
+    #2985FF Primary
+    #25A38 
+*/
+:root{
+    --background:#252A38;
+    --darker-background:#151820;
+    --default-foreground: #DCDCDC;
+    --primary:#2985FF;
+
+    --regular-text:400;
+    --bold:600;
+    --lighter:300;
+}
 body{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: gray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color:var(--default-foreground);
 }
 ol {
     padding-left: 0px;
@@ -25,9 +43,6 @@ h4{
     color:gray;
 }
 
-img {
-    width:100%;
-}
 
 .interaction-buttons{
     display: flex;
@@ -48,4 +63,40 @@ img {
     margin-left:10px;
     margin-right:10px;
     font-size:20px;
+}
+
+/* user profile */
+
+.user-info-container{
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns:2 3 ;
+    padding-left:2em;
+    width: 100vw;
+}
+
+.profile-image{
+    border-width: 0.5em;
+    border-style: solid;
+    border-color: var(--default-foreground);
+    border-radius:50%;
+    width:8em; 
+    height:8em;
+    object-fit:cover;
+    padding:0;
+ 
+}
+.user-info{
+    margin-left:1.5em;
+}
+
+.full-name{
+    font-weight: var(--regular-text);
+}
+.username {
+    font-weight: var(--bold);
+}
+
+.email {
+    font-weight: var(--lighter);
 }

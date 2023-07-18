@@ -2,7 +2,48 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
+    <div class = "user-info-container">
+        <img class="profile-image" src = "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*" alt = "an image" >       
+        <div class ="user-info">
+            <h1 class="full-name"><%= name %></h1>
+            <h2  class="username"><%= username %></h2>
+            <h2  class="email"><%= email %></h2>
+   
+        </div>
+        
+    </div>
+
+    <section>
+        <!-- <h2></h2> -->
+        <div>
+            <ol>
+                <% posts.forEach(function(post) {%>
+                    <li class = "post">
+                        
+                                   
+                       
+                        <p> 
+                            <h3> <%= post.username %></h3>
+            
+                            <p class ="post-date"><%=post.createdAt%></p>
+                            
+                            <h4><%= post.message %> </h4> 
+            
+                            <img src = <%= post.imageUrl %> alt = "an image" >
+                            
+                                    
+                            
+                        </p>
+                        
+                      
+                        
+                        
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+    </section>
+
 </body>
 <%- include('_footer') -%>
 </html>

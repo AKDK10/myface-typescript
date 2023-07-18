@@ -5,24 +5,37 @@
 <h1>Posts</h1>
 <ol>
     <% postList.results.forEach(function(post) {%>
-        <li>
-            <img src = <%= post.imageUrl %> alt = "an image"  width =200 >
+        <li class = "post">
+            
                        
-            <h2><%= post.message %> </h2> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+            <!-- <h2><%= post.message %> </h2> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %> -->
             <p> 
-                <h3>Author's name: <%= post.postedBy.name %></h3>
-                <p>
-                    Likes: <%=post.likedBy.length %>
-                </p>
-                <form method="post" action="/users/create">
+                <h3> <%= post.postedBy.name %></h3>
+
+                <p class ="post-date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+                
+                <h4><%= post.message %> </h4> 
+
+                <img src = <%= post.imageUrl %> alt = "an image" >
+                <div class ="interaction-buttons">
+                    <form class="interaction-form" method="post" action="/posts/<%= post.id %>/like">
                     
-                    <button type="submit">👍 </button><%=post.likedBy.length %>
-                </form>
-                <form method="post" action="/users/create">
-                    
-                    <button type="submit">👎 </button><%= post.dislikedBy.length %>
-                </form>                    
+                        <button class ="like-button" type="submit">👍 </button><%=post.likedBy.length %>
+                    </form>
+                    <form class="interaction-form" method="post" action="/posts/<%= post.id %>/dislike">
                         
+                        <button class ="dislike-button" type="submit">👎 </button><%= post.dislikedBy.length %>
+                    </form>    
+                </div>
+                                
+                        <!--
+                             for(let i = 0; i<post.likedBy.length; i++){
+                                if(post.likedBy[i].id !== currentUserId ){ 
+                                    return "/posts/<%= post.id %>/like"
+                                }
+                           
+
+                        } -->
                 
                 
             </p>

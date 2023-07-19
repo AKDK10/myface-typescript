@@ -14,31 +14,19 @@
         
     </div>
 
-    <section>
-        <!-- <h2></h2> -->
+    <section class = "post-section">
+        <h2><%= name.split(" ")[0]%>'s Posts</h2>
         <div>
             <ol>
                 <% posts.forEach(function(post) {%>
                     <li class = "post">
-                        
-                                   
-                       
-                        <p> 
-                            <h3> <%= post.username %></h3>
-            
-                            <p class ="post-date"><%=post.createdAt%></p>
-                            
-                            <h4><%= post.message %> </h4> 
-            
+                        <div class = "post-container"> 
                             <img src = <%= post.imageUrl %> alt = "an image" >
+                            <h3> <%= post.username %></h3>
+                            <p class ="post-date"><%=post.createdAt%></p>
+                            <h4><%= post.message %> </h4> 
                             
-                                    
-                            
-                        </p>
-                        
-                      
-                        
-                        
+                        </div>
                     </li>
                 <% }); %>
             </ol>

@@ -69,10 +69,20 @@ h4{
 
 .user-info-container{
     display: grid;
-    grid-template-rows: 1;
-    grid-template-columns:2 3 ;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "left left right right right";
     padding-left:2em;
     width: 100vw;
+}
+
+.user-info-container img {
+    grid-area: left;
+}
+
+.user-info{
+    grid-area: right;
 }
 
 .profile-image{
@@ -86,17 +96,17 @@ h4{
     padding:0;
  
 }
-.user-info{
-    margin-left:1.5em;
-}
+
 
 .full-name{
     font-weight: var(--regular-text);
 }
 .username {
     font-weight: var(--bold);
+    margin-bottom: 0;
 }
 
 .email {
     font-weight: var(--lighter);
+    margin-top: 0;
 }

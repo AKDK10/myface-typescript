@@ -34,6 +34,46 @@
         </div>
     </section>
 
+    <section class = "liked-post-section">
+        <h2>Posts <%= user.name.split(" ")[0]%> Liked</h2>
+        <div>
+            <ol>
+                <% user.likes.forEach(function(post) {%>
+                    <li class = "post">
+                        <div class = "post-container"> 
+                            <img src = <%= post.imageUrl %> alt = "an image" >
+                            <div class = "post-info-container">
+                                <h3> <%= post.username %></h3>
+                                <p class ="post-date"><%= post.createdAt %></p>
+                                <h4><%= post.message %> </h4> 
+                            </div>
+                        </div>
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+    </section>
+
+    <section class = "disliked-post-section">
+        <h2>Posts <%= user.name.split(" ")[0]%> Disliked</h2>
+        <div>
+            <ol>
+                <% user.dislikes.forEach(function(post) {%>
+                    <li class = "post">
+                        <div class = "post-container"> 
+                            <img src = <%= post.imageUrl %> alt = "an image" >
+                            <div class = "post-info-container">
+                                <h3> <%= post.username %></h3>
+                                <p class ="post-date"><%= post.createdAt %></p>
+                                <h4><%= post.message %> </h4> 
+                            </div>
+                        </div>
+                    </li>
+                <% }); %>
+            </ol>
+        </div>
+    </section>
+
 </body>
 <%- include('_footer') -%>
 </html>

@@ -147,15 +147,16 @@ header nav {
 
 /* user profile posts section */
 
-.post-section {
+section {
     padding-left: 1.5em;
+    margin-top: 2.5em;
 }
 
-.post-section h2 {
+section h2 {
     font-weight: var(--regular-text);
 }
 
-.post-section ol {
+section ol {
     list-style: none;
     display: flex;
     overflow: scroll;

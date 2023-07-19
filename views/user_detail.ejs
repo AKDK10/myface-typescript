@@ -4,28 +4,29 @@
 <body>
     
     <div class = "user-info-container">
-        <img class="profile-image" src = "<%= profileImageUrl %>" alt = "an image" >       
+        <img class="profile-image" src = "<%= user.profileImageUrl %>" alt = "an image" >       
         <div class ="user-info">
-            <h1 class="full-name"><%= name %></h1>
-            <h2  class="username"><%= username %></h2>
-            <h2  class="email"><%= email %></h2>
+            <h1 class="full-name"><%= user.name %></h1>
+            <h2  class="username"><%= user.username %></h2>
+            <h2  class="email"><%= user.email %></h2>
    
         </div>
         
     </div>
 
     <section class = "post-section">
-        <h2><%= name.split(" ")[0]%>'s Posts</h2>
+        <h2><%= user.name.split(" ")[0]%>'s Posts</h2>
         <div>
             <ol>
-                <% posts.forEach(function(post) {%>
+                <% user.posts.forEach(function(post) {%>
                     <li class = "post">
                         <div class = "post-container"> 
                             <img src = <%= post.imageUrl %> alt = "an image" >
-                            <h3> <%= post.username %></h3>
-                            <p class ="post-date"><%=post.createdAt%></p>
-                            <h4><%= post.message %> </h4> 
-                            
+                            <div class = "post-info-container">
+                                <h3> <%= user.username %></h3>
+                                <p class ="post-date"><%= format(post.createdAt, "dd/MM/yyyy") %></p>
+                                <h4><%= post.message %> </h4> 
+                            </div>
                         </div>
                     </li>
                 <% }); %>

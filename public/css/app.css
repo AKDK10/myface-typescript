@@ -27,10 +27,6 @@ body{
 ol {
     padding-left: 0px;
 }
-/* .post{
-    background-color: white;
-    list-style: none;
-} */
 
 h3 {
     margin: 5px 5px 5px 10px;
@@ -84,11 +80,52 @@ h4{
     object-fit: cover;
 }
 
-header nav {
+header .navmenu {
     top: 0;
+    right: 0;
     background-color:transparent;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
+    height: 100vh;
+    width:70vw;
+    z-index: 1;
+}
+
+.hamburger-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5em;
+    text-shadow: 2px 2px rgba(37,42,40,0.56);
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    
+}
+
+.hamburger-container i {
+    color: var(--default-foreground);
+    font-size: 2.5em;
+    z-index: 2;
+}
+
+
+.nav-links-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    right:0;
+    background-color: var(--darker-background);
+}
+
+.nav-links-container a {
+    color: var(--default-foreground);
+    text-decoration: none;
+    font-weight: var(--bold);
 }
 
 /* user profile */
@@ -100,21 +137,20 @@ header nav {
     "left left right right right";
     padding-right: 2em;
     width: 100vw;
-    background-color: rgba(37,42,40,0.56);
     margin-top: -5em;
     margin-left: 1.5em;
+    background-image: linear-gradient(to right, transparent , rgba(37,42,40,0.56));
 }
+
 
 
 .user-info{
     grid-area: right;
     margin-top: 2em;
-    opacity: 1;
 }
 
 .profile-image{
     grid-area: left;
-    opacity: 1;
     border-width: 0.3em;
     border-style: solid;
     border-color: var(--default-foreground);
@@ -123,6 +159,7 @@ header nav {
     height:8em;
     object-fit:cover;
     padding:0;
+
  
 }
 
@@ -182,3 +219,4 @@ section ol {
 .post-container h4 {
     font-weight: var(--lighter);
 }
+

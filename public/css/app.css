@@ -242,3 +242,46 @@ section ol {
 }
 
 
+/* footer styling */
+.softwire-logo{
+    height: auto;
+    width:8em;
+    margin-top:2em;
+    padding-bottom:2em;
+}
+
+.branding-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darker-background);
+    padding-top: 2em;
+    border-top: 0.2em solid var(--default-foreground);
+    
+}
+
+.load-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.load-more button {
+    height:15em;
+    width:15em;
+    font-size:4em;
+    background-color: transparent;
+    border:none;
+    color:var(--primary);
+    
+}
+
+.load-more i{
+    font-size:2em;
+}
+
+.button-text{
+    display: flex;
+    flex-direction: column;
+}

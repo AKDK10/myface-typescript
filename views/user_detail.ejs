@@ -15,7 +15,7 @@
             <h1 class="full-name"><%= user.name %></h1>
             <h2  class="username"><%= user.username %></h2>
             <h2  class="email"><%= user.email %></h2>
-            
+
    
         </div>
         
@@ -77,9 +77,25 @@
                         </div>
                     </li>
                 <% }); %>
+                
+                    <li class = "post">
+                        <div class = "post-container load-more">
+                            <button>
+                                <div class = "button-text">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    <span>Load more</span>     
+                                </div>
+                                
+                            </button> 
+                        </div>
+                           
+
+                    </li>
+                
             </ol>
         </div>
     </section>
+
 
 </body>
 <%- include('_footer') -%>

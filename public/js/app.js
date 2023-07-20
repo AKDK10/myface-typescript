@@ -18,3 +18,23 @@ navBarButton.addEventListener("click", function() {
   
   
 })
+
+
+const changeColourBtn = document.querySelector(".change-colour-btn");
+const posts = document.getElementsByClassName("post");
+
+
+
+  changeColourBtn.addEventListener("click",function(){
+    for(let post of posts){
+
+      const red = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      
+      console.log(red)
+      post.style.backgroundColor = rgb(`${red},${green},${blue}`);
+    }
+
+    
+})

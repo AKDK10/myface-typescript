@@ -3,13 +3,16 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
+<button class ="change-colour-btn">
+    Click me
+</button>
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li class = "post">
             
                        
-            <!-- <h2><%= post.message %> </h2> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %> -->
-            <p> 
+            
+            <div> 
                 <h3> <%= post.postedBy.name %></h3>
 
                 <p class ="post-date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
@@ -37,8 +40,7 @@
 
                         } -->
                 
-                
-            </p>
+            </div>
             
           
             
